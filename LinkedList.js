@@ -103,8 +103,8 @@ class LinkedList{
 
     let currentNode = this.head;
     while (currentNode) {
-      nodes.push(currentNode);
-      nodes.push(currentNode);
+      nodes.push(currentNode); 
+      nodes.push(currentNode); // For testing if nodes with the same reference are equal
       currentNode = currentNode.next;
     }
 
