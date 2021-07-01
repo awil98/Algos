@@ -14,6 +14,47 @@ Output: 0
 */
 
 
+
+/*
+Top-Down Memoized Version
+var coinChange = function(coins, amount) {  
+    let memo = {}
+    memo[0] = 0
+    
+    for(let i = 0; i < coins.length; i++){
+        memo[coins[i]] = 1    
+    }
+    
+    function getSmallest(amount){ 
+       if(amount in memo){
+           return memo[amount]
+       }
+       
+       let min = -1
+       
+       for(let i = 0; i < coins.length; i++){
+            if(coins[i] <= amount){
+                let updatedAmount = amount - coins[i]
+                let possibleSol = getSmallest(updatedAmount)
+                if(possibleSol != -1){
+                    if(min === -1){
+                        min = possibleSol + 1
+                    }else{
+                        min = Math.min(min, possibleSol+1)   
+                    }   
+                }
+            }
+       }
+       memo[amount] = min 
+       return min
+    }
+    
+    return getSmallest(amount)
+   
+};
+
+*/
+
 var coinChange = function(coins, amount) {
     let dp = []
     
