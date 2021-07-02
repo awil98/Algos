@@ -1,5 +1,5 @@
 /*
-This algorithm states that you shuld find the lowest
+This algorithm states that you should find the lowest
 weight not already visited and if it doesn't form a
 cycle then add it.
 */
