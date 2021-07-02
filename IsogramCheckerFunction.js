@@ -1,3 +1,8 @@
+/*
+An Isogram is a word, phrase, or sentence in which no letter of the alphabet occurs more than once.
+Given a string determine if it is an isogram
+*/
+
 const isIsogram = (string) => {
 
     const updatedString = string.toLowerCase()
