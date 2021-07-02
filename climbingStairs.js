@@ -12,7 +12,7 @@ var climbStairs = function(n, memo = {}) {
     let sum = 0
 
     for(let i = 1; i <=2; i++){
-        sum += climbStairs(n - i, memo)
+        sum += climbStairs(n - i, memo)//so if n becomes negative I'll just not consider it
     }
 
     memo[n] = sum
