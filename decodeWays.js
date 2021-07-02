@@ -56,6 +56,7 @@ function getDecoding(s, index, memo){
     let totalWays = 0
     
     if(s[index] != "0"){
+        //If I don't have a zero my choices are to take either 1 or two digits 
         let singleDigit = s.charAt(index)
         totalWays += getDecoding(s, index+1, memo)
         if(index+1 != s.length && s.substr(index, 2) >= "10" && s.substr(index, 2) <= "26"){
