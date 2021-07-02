@@ -6,6 +6,12 @@ The diameter of a binary tree is the length of the longest path between any two 
 The length of a path between two nodes is represented by the number of edges between them.
 */
 
+/*
+Base case occurs when left and right are null and when this happens just return 0. Basically go to the leaf nodes of the tree and calcuate the height and diameter of the 
+nodes going bottom up. The diameter will always be height of the left and right subtrees plus their indiviual edges. 
+And the height of a subtree is simply node's edge + max of it's left and right children
+*/
+
 var diameterOfBinaryTree = function(root) {
     let max = 0
     
