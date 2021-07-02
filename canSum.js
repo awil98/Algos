@@ -1,15 +1,15 @@
 
 function canSum(target, numbers, values=[]){
 
-  if(target < 0){
+  if(target < 0){ //Base case meaning the decision that I've made won't work
     values.pop()
     return null
   }
-  if(target === 0){
+  if(target === 0){ //Base case meaning I've found my solution
     return values
   }
 
-  for(let i = 0; i < numbers.length; i++){
+  for(let i = 0; i < numbers.length; i++){ //Try to see if taking numbers[i] will lead to a solution
 
     let updatedTarget = target - numbers[i]
 
