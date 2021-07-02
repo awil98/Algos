@@ -42,39 +42,8 @@ class LinkedList{
     return this
   }
 
-  delete(value){
-    if(!this.head){
-      return null;
-    }
-
-    let deletedNode = null;
-
-    //check that the aren't continuous nodes that contain the value to be deleted
-    while(this.head && this.head.value === value){
-      deletedNode = this.head
-      this.head = this.head.next
-    }
-
-    let currentNode = this.head
-
-    if(currentNode !== null){
-      while(currentNode.next){
-        if(currentNode.next.value === value){
-          deletedNode = currentNode.next
-          currentNode.next = deletedNode.next
-        }else{
-          currentNode = currentNode.next
-        }
-      }
-    }
-    // Does the tail need to be deleted
-    if(this.tail.value === value){
-      this.tail = currentNode
-    }
-    return deletedNode;
-  }
-
-  find({value = undefined, callback = undefined}){
+  
+  find(value){
     if (!this.head) {
       return null;
     }
@@ -82,11 +51,6 @@ class LinkedList{
     let currentNode = this.head;
 
     while (currentNode) {
-      // If callback is specified then try to find node by callback.
-      if (callback && callback(currentNode.value)) {
-        return currentNode;
-      }
-
       // If value is specified then try to compare by value..
       if (value !== undefined && currentNode.value === value) {
         return currentNode;
